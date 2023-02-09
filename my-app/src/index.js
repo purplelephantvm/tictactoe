@@ -21,13 +21,35 @@ const user = {
     lastName: 'Yuen'
 };
 
+const obj = {
+    name: "Pook"
+}
+
 const element = (
     <h1>
     Hello, {formatName(user)}!
+    {Welcome(obj)}
     </h1>
-); // JSX assogmed as varoable
+); // JSX assigned as varoable
 
+function Welcome(props) { // a function component
+    return <h1>Hello, {props.name}</h1>
+}
+
+root.render(element);
+
+class WelcomeClass extends React.Component {
+    render(){
+        return (
+        <h1> Hello, {this.props.name}</h1>
+        )
+    }
+}
+
+root.render(    <WelcomeClass name="Don Juan" />)
 const element1 = <a href="https://www.reactjs.org"> Link </a>
+
+// const element2 = <img src={}> </img>;
 
 // function tick() {
 //     const element = (
